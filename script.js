@@ -38,7 +38,9 @@ document.getElementById("formulario").addEventListener("submit", (event) => {
 
   let entradaContrasena = document.getElementById("password");
   let errorContrasena = document.getElementById("passwordError");
-  if (entradaContrasena.value.length < 8) {
+  let contrasenaPattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
+  if (!contrasenaPattern.test(entradaContrasena.value)) {
     //trim borra los espacios de los lados
     errorContrasena.textContent =
       "Por favor, la contraseña al menos debe tener 8 caracteres";
@@ -54,6 +56,7 @@ document.getElementById("formulario").addEventListener("submit", (event) => {
     !errorEmail.textContent &&
     !errorContrasena.textContent
   ) {
+    //BACKEND QUE RECIBA LA INFO
     alert("El formulario se ha enviado con exito");
     document.getElementById("formulario").reset();
   }

@@ -60,10 +60,9 @@ background-image: linear-gradient(-45deg, yellow 0%, rgb(0, 85, 255) 25%, rgb(31
   
   .error-message {
     color: red;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 5px;
     letter-spacing: 0.10rem;
-    background-color:rgb(0, 0, 0,0.8);
     padding: 5px;
   }
   
